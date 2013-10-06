@@ -1,0 +1,77 @@
+﻿@model IEnumerable<xianmau.me.Models.Article>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section Scripts{
+    <link href="~/Areas/Admin/css/main.css" rel="stylesheet" />
+    <style>
+        #main .th_0 {
+            width:120px;
+        }
+        #main .th_1 {
+            width:140px;
+        }
+        #main .th_2 {
+            width:120px;
+        }
+        #main .th_3 {
+
+        }
+        #main .th_4 {
+            width:100px;
+        }
+
+        #main .td_0 a {
+            padding-right:10px;
+        }
+    </style>
+}
+
+<h2>Article Setting</h2>
+
+<p>
+    <a href="@Url.Action("Create")"><img src="~/Areas/Admin/img/icon_add.png" style="width:14px;height:14px;vertical-align:middle;" /></a>
+</p>
+<table>
+    <tr>
+        <th class="th_0">Operation</th>
+        <th class="th_1">
+            @Html.DisplayNameFor(model => model.Posted)
+        </th>
+        <th class="th_2">
+            @Html.DisplayNameFor(model => model.Archives)
+        </th>
+        <th class="th_3">
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th class="th_4">
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td class="td_0">
+            <a href="@Url.Action("Details", new { id = item.Id })"><img src="~/Areas/Admin/img/icon_look.png" style="width:14px;height:14px;vertical-align:middle;" /></a>
+            <a href="@Url.Action("Edit", new { id = item.Id })"><img src="~/Areas/Admin/img/icon_edit.png" style="width:14px;height:14px;vertical-align:middle;" /></a>
+            <a href="@Url.Action("Delete", new { id = item.Id })"><img src="~/Areas/Admin/img/icon_remove.png" style="width:14px;height:14px;vertical-align:middle;" /></a>
+        </td>
+        <td class="td_1">
+            @Html.DisplayFor(modelItem => item.Posted)
+        </td>
+        <td class="td_2">
+            @Html.DisplayFor(modelItem => item.Archives)
+        </td>
+        <td class="td_3">
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td class="td_4">
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+    </tr>
+}
+
+</table>

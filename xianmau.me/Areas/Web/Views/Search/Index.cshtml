@@ -1,0 +1,55 @@
+﻿@model IEnumerable<xianmau.me.Models.Article>
+
+@{
+    ViewBag.Title = "文章";
+    Layout = "~/Areas/Web/Views/Shared/_LayoutSimply.cshtml";
+}
+
+<div class="wrap">
+
+    <h1>搜索 “<span style="color:red;">@ViewBag.search_text</span>” 的结果：</h1>
+
+    <ul>
+        @if (Model == null || Model.Count() <= 0)
+        {
+            <li>
+                没有相关文章...
+            </li>
+        }
+        else{
+            foreach (var item in Model) {
+                <li>
+                    <p class="title">
+                        @Html.ActionLink(item.Title, "Show", "Article", new { id = item.Id }, null)
+                    </p>
+                    <span class="date">
+                        @xianmau.me.Code.Tool.GetShortDate(item.Posted.ToString())
+                    </span>
+                    <p class="archives">ARCHIVES: @Html.ActionLink(item.Archives, "Archives", "Article", new { id = item.Archives }, null)</p>
+                    <p class="abstract">ABSTRACT: @item.Abstract</p>
+                    <p class="tags">
+                        TAGS: 
+                        @{
+                            string[] tagSet = item.Tag.Split(new char[] { '|', ',', ' '});
+                        }
+                        @for (int i = 0; i < tagSet.Length; ++i)
+                        {
+                            <span>@Html.ActionLink(tagSet[i], "Tag", "Article", new { id = tagSet[i] }, null)</span>
+                        }
+                    </p>
+                    <span class="like">
+                        @item.Like
+                    </span>
+                </li>
+            }
+        }
+    </ul>
+</div>
+
+@section Scripts{
+    <link href="~/Areas/Web/css/article.css" rel="stylesheet" />
+    <script type="text/javascript">
+        $(function () {
+        });
+    </script>
+}

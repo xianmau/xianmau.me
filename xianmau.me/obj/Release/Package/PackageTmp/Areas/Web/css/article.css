@@ -1,0 +1,188 @@
+﻿/*
+ *  Author:     xianmau
+ *  Contact:    xianmau@gmail.com
+ *  Update:     2013-08-02
+ */
+
+.wrap {
+    position: relative;
+    margin: 0 auto;
+    width: 960px;
+    min-height: 900px;
+}
+
+    .wrap > h1 {
+        line-height: 100px;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .wrap > ul > li {
+        position: relative;
+        margin: 30px 20px;
+        padding: 10px 0;
+        border-bottom: 1px dashed #e0e0e0;
+    }
+
+        .wrap > ul > li:hover {
+            background: #f8f8f8;
+        }
+
+    .wrap .title {
+        font-size: 24px;
+        line-height: 40px;
+        border-left: 5px solid #e0e0e0;
+        padding-left: 15px;
+    }
+
+    .wrap .date {
+        background-position: left center;
+        position: absolute;
+        right: 80px;
+        top: 20px;
+        line-height: 20px;
+        background-image: url('../img/icon_time.png');
+        background-repeat: no-repeat;
+        padding-left: 25px;
+    }
+
+    .wrap .archives {
+        padding: 10px 20px;
+        line-height: 18px;
+        color: #CCC;
+    }
+
+    .wrap .abstract {
+        padding: 0px 20px;
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    .wrap .tags {
+        padding: 10px 20px;
+        line-height: 18px;
+        color: #CCC;
+    }
+
+        .wrap .tags span {
+            padding-right: 10px;
+            padding-left: 10px;
+            margin-right: 10px;
+            background: #eaf4ff;
+        }
+
+    .wrap .like {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        line-height: 20px;
+        background-image: url('../img/icon_like.png');
+        background-repeat: no-repeat;
+        padding-left: 25px;
+    }
+
+
+
+
+
+
+.article {
+    padding: 20px;
+    position:relative;
+}
+
+    .article h1 {
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 50px;
+    }
+
+    .article .back {
+        display:block;
+        background-position: center center;
+        position:absolute;
+        top:70px;
+        left:20px;
+        background-image: url('../img/icon_back.png');
+        background-repeat: no-repeat;
+        height:50px;
+        width:50px;
+        cursor:pointer;
+    }
+
+    .article .info {
+        line-height: 50px;
+        position: relative;
+        height: 50px;
+    }
+
+        .article .info span {
+            line-height: 50px;
+            float: right;
+            color: #555;
+            padding-left: 25px;
+            margin: 0 20px;
+        }
+
+        .article .info .info-archives {
+            background-position: left center;
+            background-image: url('../img/icon_archives.png');
+            background-repeat: no-repeat;
+            padding-left: 25px;
+        }
+
+        .article .info .info-like {
+            background-position: left center;
+            background-image: url('../img/icon_like.png');
+            background-repeat: no-repeat;
+        }
+
+        .article .info .info-date {
+            background-position: left center;
+            background-image: url('../img/icon_time.png');
+            background-repeat: no-repeat;
+        }
+
+        .article .info .info-read {
+            background-position: left center;
+            background-image: url('../img/icon_read.png');
+            background-repeat: no-repeat;
+        }
+
+    .article .abstract {
+        padding: 0px 0px;
+        font-size: 14px;
+        line-height: 24px;
+        border: 1px solid #e0e0e0;
+        padding: 5px 20px;
+    }
+
+        .article .abstract legend {
+            padding: 5px;
+            color: #CCC;
+        }
+
+    .article .tags {
+        padding: 20px 0px;
+        line-height: 18px;
+        color: #CCC;
+    }
+
+        .article .tags span {
+            padding-right: 10px;
+            padding-left: 10px;
+            margin-right: 10px;
+            background: #90c4eb;
+            color: #FFF;
+        }
+
+    .article .content {
+        margin-top: 10px;
+        padding-top: 20px;
+        line-height: 25px;
+        border-top: 1px dashed #e0e0e0;
+    }
+
+        .article .content img {
+            max-width: 920px;
+        }

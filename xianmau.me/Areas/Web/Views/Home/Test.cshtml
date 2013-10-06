@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>   
+<html>   
+<head>   
+<title>MathJax TeX Test Page</title>   
+<script type="text/javascript"  
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">   
+</script>   
+</head>   
+<body>   
+When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are   
+\[x = {-b \pm \sqrt{b^2-4ac} \over 2a}.\]   
+</body>   
+</html>  
+
+@*<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>demo</title>
+    <script src="~/Areas/Web/js/jquery-1.9.1.min.js"></script>
+    <style type="text/css">
+        div#Loadding { text-align: center; margin-top: 10px; display: none; font-weight: bold; color:Red; }
+        div.content { width: 100%; height: 900px; border-bottom: 1px solid gray;  font-weight: bold; color:Red;text-align: center;}
+    </style>
+    <script type="text/javascript">
+        if (!NeuF) var NeuF = {};
+        NeuF.ScrollPage = function (obj, options, callback) {
+            var _defaultOptions = { delay: 500, marginBottom: 100 }; //默认配置：延迟时间delay和滚动条距离底部距离marginBottom
+            options = $.extend(_defaultOptions, options);
+            this.isScrolling = false; //是否在滚动
+            this.oriPos = 0; //原始位置
+            this.curPos = 0; //当前位置
+            var me = this; //顶层
+            var $obj = (typeof obj == "string") ? $("#" + obj) : $(obj);
+            //绑定滚动事件
+            $obj.scroll(function (ev) {
+                me.curPos = $obj.scrollTop();
+                if ($(window).height() + $(window).scrollTop() >= $(document.body).height() - options.marginBottom) {
+                    if (me.isScrolling == true) return;
+                    me.isScrolling = true;
+                    setTimeout(function () { me.isScrolling = false; }, options.delay);   //重复触发间隔毫秒
+                    if (typeof callback == "function") callback.call(null, me.curPos - me.oriPos);
+                };
+                me.oriPos = me.curPos;
+            });
+        };
+        $(function () {
+            window.scrollTo(0, 0); //每次F5刷新把滚动条置顶
+            //marginBottom表示滚动条离底部的距离，0表示滚动到最底部才加载，可以根据需要修改  
+            new NeuF.ScrollPage(window, { delay: 1000, marginBottom: 0 }, function (offset) {
+                if (offset > 0) {
+                    $("#Loadding").show(); //加载提示
+                    setTimeout(function () {
+                        //这里就是异步获取内容的地方，这里简化成一句话，可以根据需要修改
+                        $("#divContainer").append($("<div class='content'>第“" + ($(".content").size() + 1) + "”页内容</div>"));
+                        //内容获取后，隐藏加载提示
+                        $("#Loadding").hide();
+                    }, 1000);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="divContainer">
+        <div class="content">
+            这里是内容，尝试滚动，加载下一页内容。如果是大屏幕显示器，<br />请把CSS div.content 高度调高，以便看到滚动效果 </div>
+    </div>
+    <div id="Loadding">
+        正在加载，请稍候 ...</div>
+</body>
+</html>*@
+
+
+
+
+
+
+
+
+
+
+

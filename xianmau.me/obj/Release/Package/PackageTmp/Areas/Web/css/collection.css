@@ -1,0 +1,21 @@
+﻿/*
+ *  Author:     xianmau
+ *  Contact:    xianmau@gmail.com
+ *  Update:     2013-08-02
+ */
+
+.wrap {
+    position: relative;
+    margin: 0 auto;
+    width: 960px;
+    min-height: 900px;
+}
+    .wrap .content {
+        margin-top: 10px;
+        padding-top: 20px;
+        line-height: 25px;
+    }
+
+        .wrap .content img {
+            max-width: 920px;
+        }

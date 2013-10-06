@@ -1,0 +1,47 @@
+﻿@model IEnumerable<xianmau.me.Models.Article>
+
+@{
+    ViewBag.Title = "文章";
+    Layout = "~/Areas/Web/Views/Shared/_LayoutSimply.cshtml";
+}
+
+<div class="wrap">
+
+    <h1>标签 “<span style="color:red;">@ViewBag.tag_text</span>” 下的文章</h1>
+
+    <ul>
+    @foreach (var item in Model) {
+        <li>
+            <p class="title">
+                @Html.ActionLink(item.Title, "Show", new { id = item.Id })
+            </p>
+            <span class="date">
+                @xianmau.me.Code.Tool.GetShortDate(item.Posted.ToString())
+            </span>
+            <p class="archives">ARCHIVES: @Html.ActionLink(item.Archives, "Archives", new { id = item.Archives })</p>
+            <p class="abstract">ABSTRACT: @item.Abstract</p>
+            <p class="tags">
+                TAGS: 
+                @{
+                    string[] tagSet = item.Tag.Split(new char[] { '|', ',', ' '});
+                }
+                @for (int i = 0; i < tagSet.Length; ++i)
+                {
+                    <span>@Html.ActionLink(tagSet[i], "Tag", new { id = tagSet[i] })</span>
+                }
+            </p>
+            <span class="like">
+                @item.Like
+            </span>
+        </li>
+    }
+    </ul>
+</div>
+
+@section Scripts{
+    <link href="~/Areas/Web/css/article.css" rel="stylesheet" />
+    <script type="text/javascript">
+        $(function () {
+        });
+    </script>
+}

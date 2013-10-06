@@ -1,0 +1,49 @@
+﻿/*
+ *  Author:     xianmau
+ *  Contact:    xianmau@gmail.com
+ *  Update:     2013-08-02
+ */
+
+.wrap {
+    position: relative;
+    margin: 0 auto;
+    width: 960px;
+    min-height: 900px;
+}
+
+.wrap .left {
+    position:fixed;
+    top:100px;
+    width: 150px;
+    padding: 50px 30px 50px 0;
+    text-align:right;
+    border-right:3px solid #e0e0e0;
+}
+    .wrap .left div {
+        line-height: 40px;
+        margin:10px 0;
+        font-size: 16px;
+        color:#CCC;
+        cursor:pointer;
+    }
+
+    .wrap .left .item_clicked {
+        color:#2372bd;
+    }
+
+    .wrap .right {
+        margin-left:auto;
+        margin-right:0;
+        position: relative;
+        width: 760px;
+        min-height: 900px;
+    }
+    .wrap .right .content {
+        margin-top: 20px;
+        line-height: 25px;
+        padding: 50px;
+    }
+
+        .wrap .right .content img {
+            max-width: 920px;
+        }

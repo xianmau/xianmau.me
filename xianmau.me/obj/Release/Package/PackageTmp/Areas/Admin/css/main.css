@@ -1,0 +1,39 @@
+﻿/*
+ *  Author:     xianmau
+ *  Contact:    xianmau@gmail.com
+ *  Update:     2013-08-01
+ */
+
+#main>h2 {
+    font-size: 18px;
+    font-weight: bold;
+}
+#main>p {
+    line-height: 30px;
+}
+#main>table {
+    width:100%;
+    min-width:760px;
+}
+    #main>table th {
+        line-height: 30px;
+        border-bottom: 1px solid #e0e0e0;
+    }
+    #main>table td {
+        vertical-align:middle;
+        line-height: 30px;
+    }
+    #main>table tr:hover {
+        background:#f8f8f8;
+    }
+
+
+.editor-label {
+    line-height: 30px;
+}
+.editor-submit {
+    line-height: 50px;
+}
+    .editor-submit input[type="submit"] {
+        padding: 2px 5px;
+    }

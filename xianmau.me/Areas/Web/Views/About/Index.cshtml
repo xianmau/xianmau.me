@@ -1,0 +1,86 @@
+﻿@model List<xianmau.me.Models.Simple>
+
+@{
+    ViewBag.Title = "关于";
+    Layout = "~/Areas/Web/Views/Shared/_LayoutSimply.cshtml";
+}
+
+<div class="wrap">
+    <div class="left">
+        <div id="item1">关于本站</div>
+        <div id="item2">关于版权</div>
+        <div id="item3">关于仙茂</div>
+    </div>
+    <div class="right">
+        <div class="content">
+            <div id="item1_content">
+                @if (Model.SingleOrDefault(i => i.Title == "关于本站") != null)
+                {
+                    @Html.Raw(Model.SingleOrDefault(i => i.Title == "关于本站").Content)
+                }
+            </div>
+            <div id="item2_content">
+                @if (Model.SingleOrDefault(i => i.Title == "关于版权") != null)
+                {
+                    @Html.Raw(Model.SingleOrDefault(i => i.Title == "关于版权").Content)
+                }
+            </div>
+            <div id="item3_content">
+                @if (Model.SingleOrDefault(i => i.Title == "关于仙茂") != null)
+                {
+                    @Html.Raw(Model.SingleOrDefault(i => i.Title == "关于仙茂").Content)
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts{
+    <link href="~/Areas/Web/css/about.css" rel="stylesheet" />
+    <script>
+        $(function () {
+            $('.left').attr("style", "left:" + $('.wrap').offset().left + "px");
+            $(window).resize(function () {
+                $('.left').attr("style", "left:" + $('.wrap').offset().left + "px");
+            });
+
+            $('.left').find("div").hover(function () {
+                $(this).fadeTo(300, 0.4);
+            }, function () {
+                $(this).fadeTo(200, 1);
+            });
+
+            $('#item2').removeClass("item_clicked");
+            $('#item3').removeClass("item_clicked");
+            $('#item1').addClass("item_clicked");
+            $('#item2_content').hide();
+            $('#item3_content').hide();
+            $('#item1_content').show();
+            $('#item1').click(function () {
+                $('#item2').removeClass("item_clicked");
+                $('#item3').removeClass("item_clicked");
+                $('#item1').addClass("item_clicked");
+                $('#item2_content').hide();
+                $('#item3_content').hide();
+                $('#item1_content').slideDown(600);
+            });
+            $('#item2').click(function () {
+                $('#item1').removeClass("item_clicked");
+                $('#item3').removeClass("item_clicked");
+                $('#item2').addClass("item_clicked");
+                $('#item1_content').hide();
+                $('#item3_content').hide();
+                $('#item2_content').slideDown(600);
+            });
+            $('#item3').click(function () {
+                $('#item1').removeClass("item_clicked");
+                $('#item2').removeClass("item_clicked");
+                $('#item3').addClass("item_clicked");
+                $('#item1_content').hide();
+                $('#item2_content').hide();
+                $('#item3_content').slideDown(600);
+            });
+        });
+    </script>
+}

@@ -1,0 +1,58 @@
+﻿@model xianmau.me.Models.Article
+
+@{
+    ViewBag.Title = "文章详细";
+    Layout = "~/Areas/Web/Views/Shared/_LayoutSimply.cshtml";
+}
+
+<div class="wrap">
+    <div class="article">
+        <h1>@Html.Raw(Model.Title)</h1>
+        <div class="info">
+            <span class="info-like" onclick="add_like(@Model.Id)" style="cursor:pointer;">@Model.Like</span>
+            <span class="info-read">@Model.Read</span>
+            <span class="info-date">@Model.Posted</span>
+            <span class="info-archives">@Html.ActionLink(Model.Archives, "Archives", new { id = Model.Archives })</span>
+        </div>
+        <span class="back" onclick="history.back(-1);"></span>
+        <fieldset class="abstract">
+            <legend>摘要</legend>
+            <p>@Html.Raw(Model.Abstract)</p>
+        </fieldset>
+        
+        <p class="tags">标签: 
+            @{
+                string[] tagSet = Model.Tag.Split(new char[] { '|', ',', ' '});
+            }
+            @for (int i = 0; i < tagSet.Length; ++i)
+            {
+                <span>@Html.ActionLink(tagSet[i], "Tag", new { id = tagSet[i] })</span>
+            }
+        </p>
+        <div class="content">@Html.Raw(Model.Content)</div>
+    </div>
+</div>
+
+
+@section Scripts{
+    <link href="~/Areas/Web/css/article.css" rel="stylesheet" />
+    <link href="~/Areas/Web/css/jquery.snippet.min.css" rel="stylesheet" />
+    <script src="~/Areas/Web/js/jquery.snippet.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("pre#code").snippet($("pre#code").attr("class"), { style: "typical", transparent: false, showNum: true });
+        });
+        function add_like(id) {
+            var s = "";
+            s = $.ajax({
+                type: "POST",
+                url: "/Web/Article/add_like",
+                data: {
+                    id: id
+                },
+                async: false
+            }).responseText;
+            $('.info-like').html(s);
+        }
+    </script>
+}

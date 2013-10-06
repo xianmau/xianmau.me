@@ -1,0 +1,33 @@
+﻿@model xianmau.me.Models.Writing
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete Writing</h2>
+
+<p>
+    <a href="@Url.Action("Index")"><img src="~/Areas/Admin/img/icon_back.png" style="width:14px;height:14px;vertical-align:middle;" /></a>
+</p>
+
+<h3>Are you sure you want to delete this?</h3>
+
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" />
+    </p>
+}
+
+@section Scripts {
+    <link href="~/Areas/Admin/css/main.css" rel="stylesheet" />
+    <style>
+        #main h3 {
+            color:red;
+            line-height: 40px;
+        }
+        #main form input[type="submit"] {
+            padding: 2px 5px;
+        }
+    </style>
+}

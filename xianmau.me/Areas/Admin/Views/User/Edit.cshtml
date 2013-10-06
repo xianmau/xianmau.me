@@ -1,0 +1,61 @@
+﻿@model xianmau.me.Models.User
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit User</h2>
+
+<p>
+    <a href="@Url.Action("Index")"><img src="~/Areas/Admin/img/icon_back.png" style="width:14px;height:14px;vertical-align:middle;" /></a>
+</p>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend></legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Password)
+        </div>
+        <div class="editor-field">
+            @Html.PasswordFor(model => model.Password)
+            @Html.ValidationMessageFor(model => model.Password)
+        </div>
+
+        <div class="editor-submit">
+            <input type="submit" value="Save" />
+        </div>
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <link href="~/Areas/Admin/css/main.css" rel="stylesheet" />
+    <style>
+
+        #Name {
+            width: 250px;
+            height: 25px;
+        }
+        #Password {
+            width: 250px;
+            height: 25px;
+        }
+        
+    </style>
+}

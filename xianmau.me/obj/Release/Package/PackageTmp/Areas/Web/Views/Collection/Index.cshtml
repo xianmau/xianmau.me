@@ -1,0 +1,15 @@
+﻿@model xianmau.me.Models.Simple
+
+@{
+    ViewBag.Title = "收藏";
+    Layout = "~/Areas/Web/Views/Shared/_LayoutSimply.cshtml";
+}
+
+<div class="wrap">
+    <div class="content">@Html.Raw(Model.Content)</div>
+</div>
+
+
+@section Scripts{
+    <link href="~/Areas/Web/css/collection.css" rel="stylesheet" />
+}

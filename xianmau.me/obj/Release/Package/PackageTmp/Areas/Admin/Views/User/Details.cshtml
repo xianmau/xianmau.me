@@ -1,0 +1,23 @@
+﻿@model xianmau.me.Models.User
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>User Details</h2>
+
+<p>
+    <a href="@Url.Action("Index")"><img src="~/Areas/Admin/img/icon_back.png" style="width:14px;height:14px;vertical-align:middle;" /></a>
+</p>
+
+<p>Name: @Html.Raw(Model.Name)</p>
+<p>Password: @Html.Raw(Model.Password)</p>
+
+<p>
+    Id: @Html.Raw(Model.Id) | @Html.ActionLink("Edit", "Edit", new { id=Model.Id })
+</p>
+
+@section Scripts {
+    <link href="~/Areas/Admin/css/main.css" rel="stylesheet" />
+}

@@ -1,0 +1,41 @@
+﻿/*
+ *  Author:     xianmau
+ *  Contact:    xianmau@gmail.com
+ *  Update:     2013-08-02
+ */
+
+.wrap {
+    position:relative;
+    margin: 0 auto;
+    width: 960px;
+    /*min-height: 900px;*/
+}
+
+#tags {
+    position:relative;
+	width:400px;
+	height:400px;
+	margin: 50px auto;
+}
+    #tags li {
+	    position:absolute; 
+	    list-style-type:none;
+    }
+
+.wrap .column > div {
+    float: left;
+    margin: 30px;
+    outline: 1px solid #e0e0e0;
+    width: 260px;
+    height: 250px;
+    cursor: pointer;
+}
+
+    .wrap .column > div:hover {
+        outline:1px solid #FF0000;
+    }
+
+
+
+
+

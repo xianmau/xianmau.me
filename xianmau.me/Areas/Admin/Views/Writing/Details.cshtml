@@ -1,0 +1,53 @@
+﻿@model xianmau.me.Models.Writing
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Writing Details</h2>
+
+<p>
+    <a href="@Url.Action("Index")"><img src="~/Areas/Admin/img/icon_back.png" style="width:14px;height:14px;vertical-align:middle;" /></a>
+</p>
+
+<div class="writing">
+    <h1>@Html.Raw(Model.Title)</h1>
+    <div class="info">
+        <span>Archives: @Html.Raw(Model.Archives)</span>
+        <span>Posted on: @Html.Raw(Model.Posted)</span>
+        <span>Like: @Html.Raw(Model.Like)</span>
+    </div>
+    <img src="@Url.Content(Model.Url)" />
+</div>
+
+<p>
+    Id: @Html.Raw(Model.Id) Status: @Html.Raw(Model.Status) | @Html.ActionLink("Edit", "Edit", new { id=Model.Id })
+</p>
+
+
+@section Scripts {
+    <link href="~/Areas/Admin/css/main.css" rel="stylesheet" />
+    <style>
+        .writing {
+            outline:1px solid #f0f0f0;
+            padding: 10px;
+        }
+            .writing h1 {
+                font-size: 18px;
+                font-weight: bold;
+            }
+            .writing .info {
+                line-height: 40px;
+            }
+            .writing .info span {
+                margin-right: 30px;
+            }
+            .writing .content {
+                margin-top: 10px;
+                padding-top:10px;
+                line-height: 25px;
+                border-top: 1px dashed #e0e0e0;
+            }
+    </style>
+}

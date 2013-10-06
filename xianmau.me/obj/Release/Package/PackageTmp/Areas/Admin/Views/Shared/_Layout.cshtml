@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title - xianmau's website.</title>
+    <link href="~/css/cssreset-min.css" rel="stylesheet" />
+    <link href="~/Areas/Admin/css/layout.css" rel="stylesheet" />
+    @RenderSection("scripts", required: false)
+</head>
+<body>
+    <div id="header">
+        <h1>Sunny After Snow</h1>
+        <span>@Html.ActionLink("Exit", "Exit", "Home")</span>
+    </div>
+
+    <div id="nav">
+        <ul>
+            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+            <li>@Html.ActionLink("User", "Index", "User")</li>
+            <li>@Html.ActionLink("Article", "Index", "Article")</li>
+            <li>@Html.ActionLink("Writing", "Index", "Writing")</li>
+            <li>@Html.ActionLink("Simple", "Index", "Simple")</li>
+            <li>@Html.ActionLink("File", "Index", "File")</li>
+            <li>@Html.RouteLink("Goto Web", "Default", new { controller = "Home" })</li>
+        </ul>
+    </div>
+
+    <div id="main">
+        @RenderBody()
+    </div>
+
+    <div id="footer">
+        &copy; @DateTime.Now.Year Xianmau
+    </div>
+</body>
+</html>

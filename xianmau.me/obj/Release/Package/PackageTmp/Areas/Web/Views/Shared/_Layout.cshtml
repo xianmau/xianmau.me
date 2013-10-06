@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title - 快雪时晴.</title>
+    <link href="~/css/cssreset-min.css" rel="stylesheet" />
+    <link href="~/Areas/Web/css/layout.css" rel="stylesheet" />
+
+    @Scripts.Render("~/bundles/jquery")
+    <script>
+        $(function () {
+            
+            setLayout();
+            showNav();
+            $(window).resize(function () {
+                setLayout();
+                showNav();
+            });
+
+            $(window).bind("scroll", function () {
+                var wh = $(window).height();
+                var ww = $(window).width();
+                var scroll_top = $(window).scrollTop();
+                $('.header-img').css('top', (wh - $('.header-img').height()) / 2 + 0.5 * scroll_top + "px");
+                $('.header-img').css('opacity', 1 - (scroll_top * .0025));
+
+                if (scroll_top < wh) {
+                    var new_top = wh - 0.6 * scroll_top;
+                    if (new_top < (wh - $('.about-text').height()) / 2) {
+                        new_top = (wh - $('.about-text').height()) / 2;
+                    }
+                    $('.about-text').css('top', new_top + "px");
+                    $('.about-text').css('opacity', 1 - (wh - scroll_top) * .0025);
+                }
+                else {
+                    var new_left = (ww - $('.about-text').width()) / 2 + 0.5 * (scroll_top - wh);
+                    if (new_left > ww - $('.about-text').width()) {
+                        new_left = ww - $('.about-text').width();
+                    }
+                    $('.about-text').css('left', new_left + "px");
+                    $('.about-text').css('top', (wh - $('.about-text').height()) / 2 - 0.6 * (wh - scroll_top) + "px");
+                    $('.about-text').css('opacity', (1 + ((wh - scroll_top) * .0025)));
+                }
+                showNav();
+            });
+
+            // 文本框回车提交
+            $("#search").keypress(function (event) {
+                if (event.keyCode == 13 || event.which == 13) {
+                    search_submit();
+                }
+            });
+        });
+
+        function showNav() {
+            var wh = $(window).height();
+            var scroll_top = $(window).scrollTop();
+            if (scroll_top >= wh * 2) {
+                $('.nav-wrap').slideDown(500);
+            }
+            else {
+                $('.nav-wrap').fadeOut(300);
+            }
+        }
+
+        function setLayout() {
+            var wh = $(window).height();
+            var ww = $(window).width();
+            $(".header").height(wh);
+            $(".header-img").css('top', (wh - $('.header-img').height()) / 2 + "px");
+
+            $(".about").height(wh);
+            $(".about-text").css('top', (wh - $('.about-text').height()) / 2 + "px");
+            $(".about-text").css('left', (ww - $('.about-text').width()) / 2 + "px");
+
+        }
+
+        function search_onfocus(tag) {
+            if (tag.value == tag.defaultValue) {
+                tag.value = '';
+                tag.className = 'focus-on';
+            }
+        }
+        function search_onblur(tag) {
+            if (tag.value == '') {
+                tag.value = tag.defaultValue;
+                tag.className = 'focus-out';
+            }
+        }
+        function search_submit() {
+            var str = $('#search').val();
+            if (str == "输入您想搜索的关键字，比如：HMM，最大熵……" || str == "") {
+                return;
+            }
+            window.location = "/Web/Search/Index/" + str;
+        }
+        
+    </script>
+
+    @RenderSection("scripts", required: false)
+</head>
+<body>
+
+    <div class="header">
+        <div class="header-img"></div>
+    </div>
+
+    <div class="about">
+        <div class="about-text">&copy; @DateTime.Now.Year xianmau</div>
+    </div>
+    
+    <div style="height:50px;"></div>
+
+    <div class="nav-wrap">
+        <div class="nav-layout">
+            <ul>
+                <li>@Html.ActionLink("首页", "Index", "Home")</li>
+                <li>@Html.ActionLink("文章", "Index", "Article")</li>
+                <li>@Html.ActionLink("书法", "Index", "Writting")</li>
+                <li>@Html.ActionLink("收藏", "Index", "Collection")</li>
+                <li>@Html.ActionLink("关于", "Index", "About")</li>
+            </ul>
+            <div class="search">
+                <input type="text" id="search" class="focus-out" onblur="search_onblur(this)" onfocus="search_onfocus(this)" value="输入您想搜索的关键字，比如：HMM，最大熵……" />
+                <input type="submit" value="Search" onclick="search_submit()" />
+            </div>
+        </div>
+    </div>
+
+    <div class="main">
+        @RenderBody()
+    </div>
+
+
+</body>
+</html>
