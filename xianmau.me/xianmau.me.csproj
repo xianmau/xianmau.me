@@ -190,7 +190,8 @@
     <Content Include="Areas\Web\js\jquery.waterfall.js" />
     <Content Include="css\cssreset-min.css" />
     <Content Include="Global.asax" />
-    <Content Include="Properties\PublishProfiles\xianmau.pubxml.user" />
+    <None Include="Properties\PublishProfiles\xianmau - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\xianmau - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
@@ -205,6 +206,30 @@
     <Content Include="Scripts\mdd_modal_background.png" />
     <Content Include="Scripts\mdd_styles.css" />
     <Content Include="Scripts\mdd_toolbar.png" />
+    <Content Include="Upload\Writing\day_130810\201308100751019787.jpg" />
+    <Content Include="Upload\Writing\day_130823\201308230108486149.jpg" />
+    <Content Include="Upload\Writing\day_130823\201308230110118126.jpg" />
+    <Content Include="Upload\Writing\day_130823\201308230112243.jpg" />
+    <Content Include="Upload\Writing\day_130823\201308230113556490.jpg" />
+    <Content Include="Upload\Writing\day_130823\201308230115411075.jpg" />
+    <Content Include="Upload\Writing\day_130823\201308230121305585.jpg" />
+    <Content Include="Upload\Writing\day_130823\201308230125457271.jpg" />
+    <Content Include="Upload\Writing\day_130823\201308230127479920.jpg" />
+    <Content Include="Upload\Writing\day_130823\201308230131342952.jpg" />
+    <Content Include="Upload\Writing\day_130823\201308230135101656.jpg" />
+    <Content Include="Upload\Writing\day_130823\201308230136523666.jpg" />
+    <Content Include="Upload\Writing\day_130823\201308230139105244.jpg" />
+    <Content Include="Upload\Writing\day_130823\201308230140385335.jpg" />
+    <Content Include="Upload\Writing\day_130823\201308230142313558.jpg" />
+    <Content Include="Upload\Writing\day_130823\201308230143338376.jpg" />
+    <Content Include="Upload\Writing\day_130823\201308230146415726.jpg" />
+    <Content Include="Upload\Writing\day_130823\201308230152246091.jpg" />
+    <Content Include="Upload\Writing\day_130823\201308230158403134.jpg" />
+    <Content Include="Upload\Writing\day_130823\201308230200184114.jpg" />
+    <Content Include="Upload\Writing\day_130823\201308230201209604.jpg" />
+    <Content Include="Upload\Writing\day_130823\201308230202195660.jpg" />
+    <Content Include="Upload\Writing\day_130823\201308230204478326.jpg" />
+    <Content Include="Upload\Writing\day_130823\201308230208475941.jpg" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -493,7 +518,6 @@
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Web\Models\" />
     <Folder Include="js\" />
-    <Folder Include="Upload\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -539,7 +563,6 @@
     <Content Include="Areas\Web\Views\Writting\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Properties\PublishProfiles\xianmau.pubxml" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
   </ItemGroup>
   <PropertyGroup>
