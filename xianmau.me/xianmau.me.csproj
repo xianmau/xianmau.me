@@ -190,8 +190,7 @@
     <Content Include="Areas\Web\js\jquery.waterfall.js" />
     <Content Include="css\cssreset-min.css" />
     <Content Include="Global.asax" />
-    <None Include="Properties\PublishProfiles\xianmau - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\xianmau - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />

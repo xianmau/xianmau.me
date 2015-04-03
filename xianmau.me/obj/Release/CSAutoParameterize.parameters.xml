@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
-  <parameter name="DatabaseConnection-Web.config Connection String" description="DatabaseConnection Connection String used in web.config by the application to access the database." defaultValue="Server=tcp:ket6i7usg2.database.chinacloudapi.cn,1433;Database=XMDB;User ID=linxianmao@ket6i7usg2;Password=ABCabc123;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;" tags="SqlConnectionString">
+  <parameter name="DatabaseConnection-Web.config Connection String" description="DatabaseConnection Connection String used in web.config by the application to access the database." defaultValue="Server=tcp:58.96.190.229,1433;Database=XMDB;User ID=xianmau;Password=xianmau;Trusted_Connection=False;Connection Timeout=3600;" tags="SqlConnectionString">
     <parameterEntry kind="XmlFile" scope="C:\\Users\\XM\\Source\\Repos\\xianmau\.me\\xianmau\.me\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DatabaseConnection']/@connectionString" />
   </parameter>
 </parameters>
