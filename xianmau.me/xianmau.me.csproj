@@ -126,6 +126,8 @@
     <Compile Include="Areas\Admin\Controllers\SimpleController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Areas\Admin\Controllers\WritingController.cs" />
+    <Compile Include="Areas\Resume\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Resume\ResumeAreaRegistration.cs" />
     <Compile Include="Areas\Web\Controllers\AboutController.cs" />
     <Compile Include="Areas\Web\Controllers\ArticleController.cs" />
     <Compile Include="Areas\Web\Controllers\CollectionController.cs" />
@@ -190,6 +192,8 @@
     <Content Include="Areas\Web\js\jquery.waterfall.js" />
     <Content Include="css\cssreset-min.css" />
     <Content Include="Global.asax" />
+    <Content Include="Areas\Resume\Views\Web.config" />
+    <Content Include="Areas\Resume\Views\Home\Index.cshtml" />
     <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
@@ -515,6 +519,8 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\js\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Resume\Models\" />
+    <Folder Include="Areas\Resume\Views\Shared\" />
     <Folder Include="Areas\Web\Models\" />
     <Folder Include="js\" />
   </ItemGroup>
