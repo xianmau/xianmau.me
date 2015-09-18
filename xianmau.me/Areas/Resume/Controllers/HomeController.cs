@@ -11,9 +11,6 @@ namespace xianmau.me.Areas.Resume.Controllers
     {
         private XMDB db = new XMDB();
 
-        //
-        // GET: /Resume/Home/
-
         public ActionResult Index()
         {
             Log log = new Log();

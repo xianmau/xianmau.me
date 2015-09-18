@@ -4,18 +4,38 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
+using xianmau.me.Models;
 
 namespace xianmau.me.Areas.Web.Controllers
 {
     public class SearchController : Controller
     {
-        public Models.XMDB db = new Models.XMDB();
+        private XMDB db = new XMDB();
 
         //
         // GET: /Web/Search/
 
         public ActionResult Index(string id = "")
         {
+            Log log = new Log();
+
+            string userIp = System.Web.HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
+            if (string.IsNullOrEmpty(userIp))
+            {
+                userIp = System.Web.HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"];
+
+            }
+
+            log.Ip = userIp;
+            log.Action = string.Format("visit: {0}", System.Web.HttpContext.Current.Request.RawUrl);
+            log.Time = DateTime.Now;
+
+            if (ModelState.IsValid)
+            {
+                db.logs.Add(log);
+                db.SaveChanges();
+            }
+
             ViewBag.search_text = id;
 
             if (id == "") return View();
